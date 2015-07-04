@@ -3,7 +3,7 @@
 <% @movies.each do |movie| %>
   <article>
     <header>
-      <h2><%= movie.title %></h2>
+      <h2><%= link_to movie.title, movie %></h2>
     </header>
     <p>
       <%= truncate(movie.description, length: 40, separator: ' ') %>
@@ -19,8 +19,10 @@
       </tr>
       <tr>
         <th>Total Gross:</th>
-        <td><%= number_to_currency(movie.total_gross) %></td>
+        <td><%= format_total_gross(movie) %></td>
       </tr>
     </table>
   </article>
 <% end %>
+
+<%= link_to("Add New Movie", new_movie_path) %>
