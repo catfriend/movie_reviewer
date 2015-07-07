@@ -1,0 +1,29 @@
+@import "colors";
+
+
+header#page-header {
+  color: $secondary-color;
+  background: $primary-color;
+  padding: 5px;
+  border: 8px solid darken($primary-color, 20%);
+}
+
+  h1 {
+    text-align: center;
+  }
+
+
+footer#page-footer {
+  color: $secondary-color;
+  background: $primary-color;
+  text-align: center;
+  padding: 5px;
+  border: 8px solid darken($primary-color, 20%);
+}
+
+aside#sidebar {
+  float: right;
+  background: #F0E6FA;
+  width: 200px;
+}
+
