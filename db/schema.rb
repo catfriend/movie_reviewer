@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150706235534) do
+ActiveRecord::Schema.define(version: 20150708190525) do
 
   create_table "movies", force: true do |t|
     t.string   "title"
@@ -25,6 +25,8 @@ ActiveRecord::Schema.define(version: 20150706235534) do
     t.string   "director"
     t.string   "duration"
     t.string   "image_file_name"
+    t.string   "writer"
+    t.string   "producer"
   end
 
 end

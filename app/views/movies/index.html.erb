@@ -1,6 +1,7 @@
 <h1><%= pluralize(@movies.size, 'Movie') %></h1>
 
 <% @movies.each do |movie| %>
+  <li>
   <article class="movie">
     <header>
       <%= image_for(movie) %>
@@ -29,6 +30,7 @@
       </tr>
     </table>
   </article>
+</li>
 <% end %>
 
 <%= link_to("Add New Movie", new_movie_path) %>

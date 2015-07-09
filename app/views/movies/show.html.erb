@@ -1,5 +1,6 @@
-<article>
+<article id="movie" class="movie">
   <header>
+    <%= image_for(@movie) %>
     <h1><%= @movie.title %></h1>
   </header>
   <h2>Description</h2>
@@ -28,13 +29,21 @@
   <%= @movie.director %>
 </p>
 
+<h3>Written by</h3>
+<p>
+  <%= @movie.writer %>
+</p>
+
+<h3>Produced by</h3>
+<p>
+  <%= @movie.producer %>
+</p>
+
 <h3>Duration</h3>
 <p>
   <%= @movie.duration %>
 </p>
 
-<h3>Image</h3>
-<%= image_for(@movie) %>
 </article>
 
 <nav>

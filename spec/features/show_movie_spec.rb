@@ -12,6 +12,8 @@ describe "Viewing an individual movie" do
     expect(page).to have_text(movie.released_on)
     expect(page).to have_text(movie.cast)
     expect(page).to have_text(movie.director)
+    expect(page).to have_text(movie.writer)
+    expect(page).to have_text(movie.producer)
     expect(page).to have_text(movie.duration)
     expect(page).to have_selector("img[src$='#{movie.image_file_name}']")
   end

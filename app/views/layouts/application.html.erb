@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
   <title>Catfriend on Movies</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
@@ -9,9 +10,21 @@
 <body>
 
 <%= render "layouts/header" %>
-<%= render "layouts/sidebar" %>
 
-<%= yield %>
+<div id="wrapper">
+ 
+  <%= render "layouts/flashes" %>
+  
+  <div id="container">
+    <section id="sidebar">
+      <%= render "layouts/sidebar" %>
+    </section>
+    <section id="content">
+      <%= yield %>
+    </section>
+  </div>
+
+</div>
 
 <%= render "layouts/footer" %>
 
