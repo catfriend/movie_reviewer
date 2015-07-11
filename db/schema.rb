@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150708190525) do
+ActiveRecord::Schema.define(version: 20150710003835) do
 
   create_table "movies", force: true do |t|
     t.string   "title"
@@ -28,5 +28,18 @@ ActiveRecord::Schema.define(version: 20150708190525) do
     t.string   "writer"
     t.string   "producer"
   end
+
+  create_table "reviews", force: true do |t|
+    t.string   "name"
+    t.integer  "stars"
+    t.text     "comment"
+    t.integer  "movie_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "city"
+    t.string   "state"
+  end
+
+  add_index "reviews", ["movie_id"], name: "index_reviews_on_movie_id"
 
 end
