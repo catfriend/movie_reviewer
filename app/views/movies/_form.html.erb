@@ -1,6 +1,6 @@
 <%= form_for(@movie) do |f| %>
 <%= @movie.errors.full_messages.to_sentence %>
-  <%= render "shared/errors" %>
+  <%= render "shared/errors", object: @movies %>
 
   <fieldset>
       <ol>
@@ -16,7 +16,7 @@
       <%= f.label :rating %><br/>
       <%= f.select :rating, Movie::RATINGS, prompt: "Pick one" %>
     </li>
-    <li class="required">>
+    <li class="required">
       <%= f.label :released_on %>
       <%= f.date_select :released_on %>
     </li>
@@ -51,7 +51,7 @@
 </ol>
   <p>
     <%= f.submit %>
-    <%= link_to "Cancel", movies_path %>
+    <%= link_to "Cancel", movies_path, class: 'button' %>
   </p>
   </fieldset>
   <% end %>
