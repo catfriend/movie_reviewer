@@ -1,6 +1,5 @@
 <%= form_for(@movie) do |f| %>
-<%= @movie.errors.full_messages.to_sentence %>
-  <%= render "shared/errors", object: @movies %>
+  <%= render "shared/errors", object: @movie %>
 
   <fieldset>
       <ol>

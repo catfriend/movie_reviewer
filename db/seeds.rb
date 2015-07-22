@@ -8,8 +8,8 @@ Movie.create!([
     cast: "Robert Downey Jr., Gwyneth Paltrow and Terrence Howard",
     director: "Jon Favreau",
     writer: "Mark Fergus, Hawk Ostby, Art Marcum, and Matt Holloway",
-    producer: "Avi Arad, Kevin Feige"
-    duration: "126 min",
+    producer: "Avi Arad, Kevin Feige",
+    duration: "126 minutes",
     image_file_name: "ironman.jpg"
   },
   {
@@ -47,7 +47,7 @@ Movie.create!([
     cast: "Halle Berry, Sharon Stone and Benjamin Bratt",
     director: "Jean-Christophe 'Pitof' Comar",
     writer: "John D. Brancato, Michael Ferris, and John Rogers",
-    producer: "Denise Di Novi, Edward L. McDonnell"
+    producer: "Denise Di Novi, Edward L. McDonnell",
     duration: "101 minutes",
     image_file_name: "catwoman.jpg"
   }
