@@ -7,9 +7,21 @@
       <li>
         <%= link_to 'Add New Movie', new_movie_path %>
       </li>
-      <li>
-        <%= link_to 'Sign Up', signup_path %>
-      </li>
+        <p>
+          <li>
+      <% if current_user %>
+        <%= link_to " Your Account Settings", edit_user_path(current_user) %>
+      <% else %>
+        <%= link_to 'Sign Up', signup_path, class: 'button' %>
+        <%= link_to 'Sign In', new_session_path, class: 'button' %>
+      <% end %>
+  </p>
+</li>
+          <p>
+              <%= current_user.name + ' is online' %>
+          </p>
+
     </ul>
+
   </nav>
 </aside>
