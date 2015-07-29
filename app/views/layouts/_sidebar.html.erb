@@ -11,16 +11,20 @@
           <li>
       <% if current_user %>
         <%= link_to " Your Account Settings", edit_user_path(current_user) %>
+      </li>
+
+      <li>
+        <%= link_to 'Sign Out', session_path, method: :delete %>
+      </li>
+        <li>
+        <%= current_user.name + ' is online' %>
+      </li>
       <% else %>
         <%= link_to 'Sign Up', signup_path, class: 'button' %>
         <%= link_to 'Sign In', new_session_path, class: 'button' %>
       <% end %>
   </p>
 </li>
-          <p>
-              <%= current_user.name + ' is online' %>
-          </p>
-
     </ul>
 
   </nav>
