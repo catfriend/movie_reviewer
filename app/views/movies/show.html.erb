@@ -56,7 +56,12 @@
     <li>
           <span class="gravatar"><%= profile_image_for(review.user, size: 35) %></span>
           <span class="review"><%= pluralize(review.stars, 'star') %></span>
-          <span class="user">by <%= review.user.name %>
+          <span class="user">by         
+            <% if review.user.username? %>
+            <%= link_to review.user.username, review.user %>
+            <% else %>
+            <%= link_to review.user.name, review.user %>
+            <% end %>
           </span>
           <span class="date">
             <%= time_ago_in_words(review.created_at) %> ago
