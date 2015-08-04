@@ -54,8 +54,10 @@
 <ol id="reviews">
   <% @movie.recent_reviews.each do |review| %>
     <li>
+          <span class="gravatar"><%= profile_image_for(review.user, size: 35) %></span>
           <span class="review"><%= pluralize(review.stars, 'star') %></span>
-          <span class="user">by <%= review.name %></span>
+          <span class="user">by <%= review.user.name %>
+          </span>
           <span class="date">
             <%= time_ago_in_words(review.created_at) %> ago
           </span>
