@@ -26,12 +26,12 @@ describe "Viewing an individual movie" do
     expect(page).to have_text("$60,000,000.00")
   end
 
-  it "shows 'Flop!' if the total gross is less than $50M" do
+  it "shows 'Bomb!' if the total gross is less than $50M" do
     movie = Movie.create(movie_attributes(total_gross: 40000000))
 
     visit movie_url(movie)
 
-    expect(page).to have_text("Flop!")
+    expect(page).to have_text("Bomb!")
   end
   
 end
