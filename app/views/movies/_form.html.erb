@@ -43,6 +43,9 @@
     <%= f.label :duration %><br/>
     <%= f.text_field :duration, size: 10 %>
   </li>
+    <li class="required">
+    <%= f.collection_radio_buttons(:genre_ids, Genre.all, :id, :name) %><br/>
+  </li>
   <li class="required">
     <%= f.label :image_file_name %><br/>
     <%= f.text_field :image_file_name %>

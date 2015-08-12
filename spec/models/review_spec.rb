@@ -54,4 +54,18 @@ describe "A review" do
       expect(review.errors[:stars].first).to eq("must be between 1 and 5")
     end
   end
+
+  it "has likes" do
+  review = Review.new(review_attributes)
+  like1 = User.new(user_attributes(email: "larry@example.com"))
+  like2 = User.new(user_attributes(email: "moe@example.com"))
+
+  review.likes.new(user: like1)
+  review.likes.new(user: like2)
+
+  expect(review.likes).to include(like1)
+  expect(review.likes).to include(like2)
+end
+
+
 end

@@ -15,6 +15,14 @@
     <%= pluralize(@fans.size, 'fan') %>
   </p>
 
+    <% if current_user %>
+      <% if @current_favorite %>
+        <%= button_to "Unfave", movie_favorite_path(@movie, @current_favorite), method: :delete %>
+      <% else %>  
+        <%= button_to "Fave", movie_favorites_path(@movie) %>
+    <% end %>
+  <% end %>
+
   <% if @fans.any? %>
     <h3>Fans</h3>
     <ul>
@@ -65,6 +73,13 @@
 <p>
   <%= @movie.duration %>
 </p>
+
+<h3>Genres</h3>
+ <ul>
+    <% @genres.each do |genre| %>
+     <li><%= genre.name %></li>
+  <% end %>
+ </ul>
 
 <h3>Average Star Rating</h3>
 <p>

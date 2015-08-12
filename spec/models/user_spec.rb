@@ -145,4 +145,5 @@ describe "A user" do
     expect(user.favorite_movies).to include(movie1)
     expect(user.favorite_movies).to include(movie2)
   end
+
 end
