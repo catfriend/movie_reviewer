@@ -1,8 +1,16 @@
+<% content_for(:title, @movie.title) %>
+
 <article id="movie" class="movie">
   <header>
     <%= image_for(@movie) %>
     <h1><%= @movie.title %></h1>
   </header>
+
+  <h3>Average Star Rating</h3>
+  <p>
+    <%= format_average_stars(@movie) %>
+  </p>
+
   <h2>Description</h2>
   <p>
     <%= @movie.description %>
@@ -21,24 +29,6 @@
       <% else %>  
         <%= button_to "Fave", movie_favorites_path(@movie) %>
     <% end %>
-  <% end %>
-
-  <% if @fans.any? %>
-    <h3>Fans</h3>
-    <ul>
-      <% @fans.each do |user| %>
-        <li>
-          <% if user.username? %>
-          <%= link_to user.username, user %>
-            <% else %>
-            <%= link_to user.name, user %>
-            <% end %>
-        </li>
-        <li>
-          <%= profile_image_for(user, size: 10) %>
-        </li>
-      <% end %>
-    </ul>
   <% end %>
 
   <h3>Released On</h3>
@@ -74,18 +64,6 @@
   <%= @movie.duration %>
 </p>
 
-<h3>Genres</h3>
- <ul>
-    <% @genres.each do |genre| %>
-     <li><%= genre.name %></li>
-  <% end %>
- </ul>
-
-<h3>Average Star Rating</h3>
-<p>
-  <%= format_average_stars(@movie) %>
-</p>
-
 <% if @movie.reviews.any? %>
 <h3>Most Recent Review</h3>
 <ol id="reviews">
@@ -117,8 +95,32 @@
 </p>
 <% end %>
 
+<% content_for :sidebar do %>
+  <% if @fans.any? %>
+    <h3>Fans</h3>
+    <ul>
+      <% @fans.each do |user| %>
+        <li>
+          <% if user.username? %>
+          <%= link_to user.username, user %>
+            <% else %>
+            <%= link_to user.name, user %>
+            <% end %>
+        </li>
+        <li>
+          <%= profile_image_for(user, size: 10) %>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
 
-
+  <h3>Genres</h3>
+ <ul>
+    <% @genres.each do |genre| %>
+     <li><%= genre.name %></li>
+  <% end %>
+ </ul>
+<% end %>
 
   <footer>
     <%= link_to "Write Review", new_movie_review_path(@movie), 
