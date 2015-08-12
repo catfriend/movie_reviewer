@@ -1,0 +1,13 @@
+<header id="content-header">
+  <h1>Genres</h1>
+</header>
+
+ <h2>Click on one of the genres below to see a list of all movies in that genre in our database. </h2>
+
+<ul>
+  <% @genres.each do |genre| %>
+    <li>
+      <%= link_to genre.name, genre %>
+    </li>
+  <% end %>
+</ul>

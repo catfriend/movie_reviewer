@@ -2,8 +2,6 @@ Rails.application.routes.draw do
 
   resources :genres
 
-  resources :likes
-
   resource :session
 
   get 'signin' => 'sessions#new'
