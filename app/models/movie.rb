@@ -1,4 +1,6 @@
 class Movie < ActiveRecord::Base
+	before_validation :generate_slug
+	
 	has_many :reviews, -> { order(created_at: :desc) }, dependent: :destroy
 	has_many :favorites, dependent: :destroy
 	has_many :fans, through: :favorites, source: :user
@@ -8,7 +10,8 @@ class Movie < ActiveRecord::Base
 
 
 
-	validates :title, :released_on, presence: true
+	validates :title, :released_on, presence: true, uniqueness: true
+	validates :slug, presence: true, uniqueness: true
 	
 	validates :description, length: { minimum: 25 }
 	
@@ -18,6 +21,8 @@ class Movie < ActiveRecord::Base
 	  with:    /\w+\.(gif|jpg|png)\z/i,
 	  message: "must reference a GIF, JPG, or PNG image"
 	}
+
+
 
 	RATINGS = %w(G PG PG-13 R NC-17 NYR)
 
@@ -41,6 +46,14 @@ class Movie < ActiveRecord::Base
 
 	def recent_reviews
 		reviews.order('created_at desc').limit(1)	
+	end
+
+	def to_param
+		slug
+	end
+
+	def generate_slug
+		self.slug ||= title.parameterize if title
 	end
 
 end
