@@ -4,7 +4,6 @@ class ReviewsController < ApplicationController
 
 	def index
 		@reviews = @movie.reviews
-		@likes = @review.likes
 	end
 
 	def new
