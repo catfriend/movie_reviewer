@@ -1,9 +1,9 @@
 source 'https://rubygems.org'
-ruby '2.1.0'
+ruby '2.2.3'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.9'
+gem 'rails', '4.2.4'
 
 group :development, :test do
 	gem 'sqlite3'
@@ -11,6 +11,7 @@ end
 
 group :production do
 	gem 'pg'
+	gem 'rails_12factor'
 end
 
 
