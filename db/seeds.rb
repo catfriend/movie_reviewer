@@ -212,7 +212,7 @@ groucho = User.find_by(name: "Groucho")
 zeppo = User.find_by(name: "Zeppo")
 harpo = User.find_by(name: "Harpo")
 chico = User.find_by(name: "Chico")
-larry! = User.find_by(name: "Larry!")
+larry = User.find_by(name: "Larry")
 
 action = Genre.create!(name: "Action")
 comedy = Genre.create!(name: "Comedy")
