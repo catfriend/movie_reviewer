@@ -200,7 +200,7 @@ User.create!([
     password_confirmation: "password"
   },
   {
-    name: "Larry!",
+    name: "Larry",
     email: "larrymail@example.com",
     username: "MyNameIsLarry",
     password: "password",
