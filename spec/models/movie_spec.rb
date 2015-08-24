@@ -107,13 +107,13 @@ describe "A movie" do
     expect(movie.valid?).to be_true
   end
   
-  it "is a bomb if the total gross is less than $50M" do
+  it "is a bomb if the total gross is less than $25M" do
     movie = Movie.new(total_gross: 40000000)
 
     expect(movie).to be_bomb
   end
   
-  it "is not a bomb if the total gross is greater than $50M" do
+  it "is not a bomb if the total gross is greater than $25M" do
     movie = Movie.new(total_gross: 60000000)
 
     expect(movie).not_to be_bomb
@@ -181,7 +181,7 @@ describe "A movie" do
   end
 
   context "bombs query" do
-    it "returns movies with a total gross less than 50_000_000" do
+    it "returns movies with a total gross less than 25_000_000" do
       movie1 = Movie.create!(movie_attributes(total_gross: 300_000_000))
       movie2 = Movie.create!(movie_attributes(total_gross: 49_000_000))
 
