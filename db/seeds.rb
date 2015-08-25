@@ -174,35 +174,30 @@ User.create!([
   {
     name: "Groucho",
     email: "groucho@example.com",
-    username: "MyNameIsGroucho",
     password: "password",
     password_confirmation: "password"
   },
   {
     name: "Zeppo",
     email: "zeppo@example.com",
-    username: "MyNameIsZeppo",
     password: "password",
     password_confirmation: "password"
   },
   {
     name: "Harpo",
     email: "harpo@example.com",
-    username: "MyNameIsHarpo",
     password: "password",
     password_confirmation: "password"
   },
   {
     name: "Chico",
     email: "chico@example.com",
-    username: "MyNameIsChico",
     password: "password",
     password_confirmation: "password"
   },
   {
     name: "Larry",
     email: "larrymail@example.com",
-    username: "MyNameIsLarry",
     password: "password",
     password_confirmation: "password"
   }
