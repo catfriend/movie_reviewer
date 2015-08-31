@@ -13,8 +13,7 @@ class User < ActiveRecord::Base
 
   validates :password, length: { minimum: 6, allow_blank: true }
 
-  validates :username, presence: true,
-  						uniqueness: { case_sensitive: false }
+  validates :username, length: {minimum: 2, allow_blank: true }
 
   scope :by_name, -> { order(:name) }
   scope :not_admins, -> { by_name.where(admin: false) }
